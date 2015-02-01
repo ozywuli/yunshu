@@ -1,0 +1,1 @@
+function hello(){return"say hello"}var hello="hi",x=y,hello="hello";
