@@ -1,0 +1,5 @@
+ @for $i from 1 through 24 {
+  .definition:nth-of-type( #{$i} ):before {
+    content: '#{$i}';
+  }
+}

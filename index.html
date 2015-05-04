@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Document</title>
 
+  <link rel="stylesheet" href="bower_components/normalize.css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -31,7 +32,7 @@
 </form>
 
 
-<div class="word-result"></div>
+<ul class="word-result"></ul>
 
 
 
@@ -39,6 +40,17 @@
 
 
 
+<script id="definition-template" type="x-handlebars-template">
+  {{#results}}
+    <li class="definition"><span class="def-index">{{@index}}</span><div class="def-content">{{definition}}</div></li>
+  {{/results}}
+</script>
+
+<!-- History.js -->
+<script src="//browserstate.github.io/history.js/scripts/bundled/html4+html5/jquery.history.js"></script>
+
+<!-- Ajaxify -->
+<script src="//rawgithub.com/browserstate/ajaxify/master/ajaxify-html5.js"></script>
 
 <script src="js/script.js"></script>
 

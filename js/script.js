@@ -21,24 +21,18 @@ if ( word ) {
       success: function(data) {
         // console.log(data)
 
-        var definitions = data.results;
 
 
-        console.log(definitions.length);
+        console.log(data);
+        console.log(data.results);
 
-        var x = '';
+
+        $('.word-result').empty();
 
 
-        for (var i = 0; i < definitions.length; i++) {
-          console.log(definitions[i].definition);
-          x += '<p>' + definitions[i].definition + '</p>';
-          i++;
-
-        }
-
-        console.log(x);
-
-        $('.word-result').html(x);
+        var theTemplateScript = $("#definition-template").html();
+        var theTemplate = Handlebars.compile(theTemplateScript);
+        $(".word-result").append(theTemplate(data));
 
 
       },
