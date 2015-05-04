@@ -49,6 +49,7 @@ $(document).ready(function () {
                   if (_.isArray(definition[key]) && key != 'examples') {
 
                     var arr = value;
+
                     for (var i = 0, len = arr.length; i < len; i++) {
                       if (_.isString(arr[i])) {
                         arr[i] = '<a class=\'exampleLink\' href=\'#\'>' + arr[i] + '</a>'
@@ -69,11 +70,14 @@ $(document).ready(function () {
               }
             }
           }
+
           var formatted = JSON.stringify(result, null, '  ');
           $('#json pre code').html(formatted);
+
           $('pre code').each(function (i, block) {
             hljs.highlightBlock(block);
           });
+
         }, // success
         error: function (jqXHR, textStatus, errorThrown) {
           if (jqXHR.status === 404) {

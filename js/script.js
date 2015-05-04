@@ -19,29 +19,26 @@ if ( word ) {
       data: {}, // Additional parameters here
       datatype: 'json',
       success: function(data) {
-        console.log(data)
-
+        // console.log(data)
 
         var definitions = data.results;
 
-        definitions.forEach(function(definition) {
-          console.log(definition.definition);
-        })
 
-/*        definitions.forEach(function(definition) {
-          _.each(definition, function(value, key) {
-            if ( _.isArray(definition[key] && key != 'examples') {
-              var arr = value;
-              for ( var i = 0, len = arr.length; i < len; i++) {
-                if ( _.isString(arr[i])) {
-                  arr[i] ='<a class=\'exampleLink\' href=\'#\'>' + arr[i] + '</a>'
-                }
-              }
-            } )
-          })
-        })*/
+        console.log(definitions.length);
 
-        $('.word-result').html(data.word + data.results[0].definition + data.frequency);
+        var x = '';
+
+
+        for (var i = 0; i < definitions.length; i++) {
+          console.log(definitions[i].definition);
+          x += '<p>' + definitions[i].definition + '</p>';
+          i++;
+
+        }
+
+        console.log(x);
+
+        $('.word-result').html(x);
 
 
       },
