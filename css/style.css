@@ -1,0 +1,4 @@
+/* line 1, ../sass/style.scss */
+.has-error {
+  border: 1px solid red;
+}

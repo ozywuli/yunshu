@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<a href="http://javascriptissexy.com/handlebars-js-tutorial-learn-everything-about-handlebars-js-javascript-templating/">Content</a>
+
+<br>
+
+
+<ul class="shoesNav"></ul>
+
+
+</body>
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/handlebars/handlebars.min.js"></script>
+<script src="bower_components/underscore/underscore-min.js"></script>
+
+
+
+
+<form action="" class="form">
+  <div class="form-group">
+    <label for="word" class="control-label">Enter a word</label>
+    <input class="form-control" id="word" placeholder="Example" type="text">
+  </div>
+
+
+  <button id="getWord" class="btn btn-info">Call the API</button>
+
+</form>
+
+
+<div class="word-result"></div>
+
+
+
+
+
+
+<!-- Basic -->
+
+<!-- <script id="shoe-template" type="x-handlebars-template">
+  {{#each this}}
+    <li class="shoes"><a href="/{{name}}">{{name}} -- Price: {{price}} </a></li>
+  {{/each}}
+</script> -->
+
+
+
+
+
+
+
+
+
+<!-- Parents -->
+
+<!-- <script id="shoe-template" type="x-handlebars-template">
+  {{#users}}
+    <li>{{name.firstName}} {{name.lastName}} is in the {{../groupName}} group.</li>
+  {{/users}}
+</script>
+ -->
+
+
+
+
+
+
+<!-- Partials -->
+
+<!-- <script id="shoe-template" type="x-handlebars-template">
+  {{#each allShoes}}
+    <li clas="shoes">
+      <span class="shoe-name"> {{name}} - </span> price: {{price}}
+      {{> description}}
+    </li>
+  {{/each}}
+</script>
+
+
+<script id="shoe-description" type="x-handlebars-template">
+  <ul>
+    <li>{{color}}</li>
+    <li>{{size}}</li>
+  </ul>
+</script>
+ -->
+
+
+
+
+
+
+<!-- this -->
+
+<!-- <script id="fruits-template" type="x-handlebars-template">
+
+List of fruits:
+{{#this}}
+  <li>{{firstName}} {{lastName}}</li>
+{{/this}}
+
+</script> -->
+
+
+
+
+
+
+<!-- with helper -->
+<!-- <script id="shoe-template" type="x-handlebars-template">​ {{groupName}} Group   {{#with celebrity}}​    <li>{{firstName}} {{lastName}}</li>​    {{/with}}​</script>
+
+<script id="shoe-template" type="x-handlebars-template">
+    {{groupName}} Group
+    {{#with celebrity}}
+      <li>{{firstName}} {{lastName}}</li>
+    {{/with}}
+</script>
+ -->
+
+
+
+
+
+
+
+
+
+<!-- Custom helper function -->
+<!-- <script id="shoe-template" type="x-handlebars-template">
+  {{theNameOfTheHelper score}}
+</script> -->
+
+
+
+
+
+
+
+
+
+
+
+<!-- custom block helpers -->
+<!-- <script id="shoe-template" type="x-handlebars-template">​ {{#userScore this}}​​<div>{{firstName}} {{lastName}}, Your Total Score is <strong>{{score}}</strong> </div>​ {{/userScore}}​</script>​
+
+<script id="shoe-template" type="x-handlebars-template">
+  {{#userScore this}}
+    <div>{{firstName}} {{lastName}}, Your total score is <strong>{{score}}</strong> </div>
+  {{/userScore}}
+</script>
+ -->
+
+
+
+
+
+
+
+
+
+<script src="js/script.js"></script>
+
+</html>
