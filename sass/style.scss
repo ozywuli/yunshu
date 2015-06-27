@@ -1,3 +1,22 @@
+ul, ol, li {
+  list-style: none;
+}
+
 .has-error {
   border: 1px solid red;
 }
+
+
+.definition:before {
+
+  margin-right: 10px;
+}
+
+.def-index {
+  float: left;
+
+}
+.def-content {
+  padding-left: 35px;
+}
+
