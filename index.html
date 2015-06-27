@@ -5,7 +5,7 @@
   <title>Document</title>
 
   <link rel="stylesheet" href="bower_components/normalize.css/normalize.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="src/css/style.css">
 </head>
 <body>
 
@@ -38,11 +38,11 @@
 
 
 
-
+<!-- <li class="definition"><span class="def-index">{{@index}}</span><div class="def-content">{{definition}}</div></li> -->
 
 <script id="definition-template" type="x-handlebars-template">
   {{#results}}
-    <li class="definition"><span class="def-index">{{@index}}</span><div class="def-content">{{definition}}</div></li>
+    <li class="definition"><div class="def-content">{{definition}}</div></li>
   {{/results}}
 </script>
 
@@ -52,6 +52,6 @@
 <!-- Ajaxify -->
 <script src="//rawgithub.com/browserstate/ajaxify/master/ajaxify-html5.js"></script>
 
-<script src="js/script.js"></script>
+<script src="src/js/script.js"></script>
 
 </html>

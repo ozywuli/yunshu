@@ -1,0 +1,32 @@
+ul, ol, li {
+  list-style: none;
+}
+
+.has-error {
+  border: 1px solid red;
+}
+
+
+.definition:before {
+
+  margin-right: 10px;
+}
+
+
+.word-result {
+  counter-reset: top-counter;
+}
+
+.definition:before {
+  content: counter(top-counter, decimal);
+  counter-increment: top-counter;
+}
+
+.def-index {
+  float: left;
+
+}
+.def-content {
+  display: inline-block;
+}
+
