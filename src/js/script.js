@@ -24,6 +24,9 @@ if ( word ) {
         $('.definitions').empty();
 
 
+        $('.definitions').fadeIn(800);
+
+
         var theTemplateScript = $("#definition-template").html();
         var theTemplate = Handlebars.compile(theTemplateScript);
         $(".definitions").append(theTemplate(data));

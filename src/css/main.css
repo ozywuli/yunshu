@@ -194,42 +194,43 @@ ul, ol, li {
 
 /* line 198, ../sass/main.scss */
 .definitions {
+  display: none;
   counter-reset: top-counter;
 }
 
-/* line 202, ../sass/main.scss */
+/* line 203, ../sass/main.scss */
 .definition {
   margin-bottom: 10px;
 }
-/* line 205, ../sass/main.scss */
+/* line 206, ../sass/main.scss */
 .definition:before {
   content: counter(top-counter,decimal);
   counter-increment: top-counter;
   float: left;
 }
 
-/* line 213, ../sass/main.scss */
+/* line 214, ../sass/main.scss */
 .def-content {
   padding-left: 40px;
 }
 
-/* line 217, ../sass/main.scss */
+/* line 218, ../sass/main.scss */
 .rhymes {
   line-height: 2;
 }
 
-/* line 220, ../sass/main.scss */
+/* line 221, ../sass/main.scss */
 .rhyme {
   display: inline;
 }
 
-/* line 227, ../sass/main.scss */
+/* line 228, ../sass/main.scss */
 .footer {
   background: #444;
   padding: 20px;
   color: #FFF;
 }
-/* line 232, ../sass/main.scss */
+/* line 233, ../sass/main.scss */
 .footer a {
   color: orange;
 }
@@ -240,7 +241,7 @@ ul, ol, li {
 /*
  * Hide visually and from screen readers:
  */
-/* line 250, ../sass/main.scss */
+/* line 251, ../sass/main.scss */
 .hidden {
   display: none !important;
 }
@@ -249,7 +250,7 @@ ul, ol, li {
  * Hide only visually, but have it available for screen readers:
  * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
  */
-/* line 259, ../sass/main.scss */
+/* line 260, ../sass/main.scss */
 .visuallyhidden {
   border: 0;
   clip: rect(0 0 0 0);
@@ -266,7 +267,7 @@ ul, ol, li {
  * to be focusable when navigated to via the keyboard:
  * https://www.drupal.org/node/897638
  */
-/* line 276, ../sass/main.scss */
+/* line 277, ../sass/main.scss */
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
   clip: auto;
@@ -280,7 +281,7 @@ ul, ol, li {
 /*
  * Hide visually and from screen readers, but maintain layout
  */
-/* line 290, ../sass/main.scss */
+/* line 291, ../sass/main.scss */
 .invisible {
   visibility: hidden;
 }
@@ -296,7 +297,7 @@ ul, ol, li {
  * 2. The use of `table` rather than `block` is only necessary if using
  *    `:before` to contain the top-margins of child elements.
  */
-/* line 306, ../sass/main.scss */
+/* line 307, ../sass/main.scss */
 .clearfix:before,
 .clearfix:after {
   content: " ";
@@ -305,7 +306,7 @@ ul, ol, li {
   /* 2 */
 }
 
-/* line 312, ../sass/main.scss */
+/* line 313, ../sass/main.scss */
 .clearfix:after {
   clear: both;
 }
@@ -327,7 +328,7 @@ ul, ol, li {
    http://www.phpied.com/delay-loading-your-print-css/
    ========================================================================== */
 @media print {
-  /* line 340, ../sass/main.scss */
+  /* line 341, ../sass/main.scss */
   *,
   *:before,
   *:after {
@@ -339,18 +340,18 @@ ul, ol, li {
     text-shadow: none !important;
   }
 
-  /* line 350, ../sass/main.scss */
+  /* line 351, ../sass/main.scss */
   a,
   a:visited {
     text-decoration: underline;
   }
 
-  /* line 355, ../sass/main.scss */
+  /* line 356, ../sass/main.scss */
   a[href]:after {
     content: " (" attr(href) ")";
   }
 
-  /* line 359, ../sass/main.scss */
+  /* line 360, ../sass/main.scss */
   abbr[title]:after {
     content: " (" attr(title) ")";
   }
@@ -359,13 +360,13 @@ ul, ol, li {
    * Don't show links that are fragment identifiers,
    * or use the `javascript:` pseudo protocol
    */
-  /* line 368, ../sass/main.scss */
+  /* line 369, ../sass/main.scss */
   a[href^="#"]:after,
   a[href^="javascript:"]:after {
     content: "";
   }
 
-  /* line 373, ../sass/main.scss */
+  /* line 374, ../sass/main.scss */
   pre,
   blockquote {
     border: 1px solid #999;
@@ -376,23 +377,23 @@ ul, ol, li {
    * Printing Tables:
    * http://css-discuss.incutio.com/wiki/Printing_Tables
    */
-  /* line 384, ../sass/main.scss */
+  /* line 385, ../sass/main.scss */
   thead {
     display: table-header-group;
   }
 
-  /* line 388, ../sass/main.scss */
+  /* line 389, ../sass/main.scss */
   tr,
   img {
     page-break-inside: avoid;
   }
 
-  /* line 393, ../sass/main.scss */
+  /* line 394, ../sass/main.scss */
   img {
     max-width: 100% !important;
   }
 
-  /* line 397, ../sass/main.scss */
+  /* line 398, ../sass/main.scss */
   p,
   h2,
   h3 {
@@ -400,7 +401,7 @@ ul, ol, li {
     widows: 3;
   }
 
-  /* line 404, ../sass/main.scss */
+  /* line 405, ../sass/main.scss */
   h2,
   h3 {
     page-break-after: avoid;
