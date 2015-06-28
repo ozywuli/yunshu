@@ -15,30 +15,54 @@ if ( word ) {
       data: {}, // Additional parameters here
       datatype: 'json',
       success: function(data) {
-        // console.log(data)
-
 
 
         console.log(data);
-        console.log(data.results);
 
 
-        $('.word-result').empty();
+
+        $('.definitions').empty();
 
 
         var theTemplateScript = $("#definition-template").html();
         var theTemplate = Handlebars.compile(theTemplateScript);
-        $(".word-result").append(theTemplate(data));
+        $(".definitions").append(theTemplate(data));
 
 
-      },
+
+        $.ajax({
+          url: 'https://wordsapiv1.p.mashape.com/words/' + word + '/rhymes',
+          type: 'GET',
+          data: {},
+          datatype: 'json',
+          success: function(data) {
+            console.log(data);
+            console.log(data.rhymes)
+
+            var theTemplateScript = $("#rhymes-template").html();
+            var theTemplate = Handlebars.compile(theTemplateScript);
+            $(".rhymes").append(theTemplate(data));
+
+
+          }, // end success
+          error: function(err) {
+            console.log(err);
+          }, // end error
+          beforeSend: function(xhr) {
+            xhr.setRequestHeader("X-Mashape-Authorization", "hhUvOn80C0mshEr1StkZqqGUloimp1P7Ndwjsn4g645NtwbRDP");
+          } // end beforeSend
+        });
+
+
+      }, // end success
       error: function(err) {
         console.log(err);
-      },
+      }, // end error
       beforeSend: function(xhr) {
         xhr.setRequestHeader("X-Mashape-Authorization", "hhUvOn80C0mshEr1StkZqqGUloimp1P7Ndwjsn4g645NtwbRDP");
-      }
-  });
+      } // end beforeSend
+
+  }); // end ajax
 
 
 } else {
