@@ -10,9 +10,9 @@
    Base styles: opinionated defaults
    ========================================================================== */
 
-html {
+html, body {
     color: #222;
-    font-size: 1em;
+    font-size: 62.5%;
     line-height: 1.4;
 }
 
@@ -118,12 +118,22 @@ ul, ol, li {
    ========================================================================== */
 
 
+.container {
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  font-size: 1.4rem;
+
+  @media all and (min-width: 768px) {
+    font-size: 1.8rem;
+  }
+}
+
 
 .title {
   display: block;
   background: #333;
   line-height: 1;
   padding: 10px 20px;
+  font-size: 1.2rem;
   a {
     color: #FFF;
   }
@@ -155,7 +165,7 @@ ul, ol, li {
   right: 0;
   background: orange;
   border: 0;
-  padding: 5px;
+  height: 100%;
 
   svg {
     width: 24px;
@@ -180,6 +190,10 @@ ul, ol, li {
   }
 }
 
+.section-title {
+  margin-bottom: 10px;
+}
+
 
 .definitions {
   counter-reset: top-counter;
@@ -200,13 +214,25 @@ ul, ol, li {
   padding-left: 40px;
 }
 
+.rhymes {
+  line-height: 2;
+}
+.rhyme {
+  display: inline;
+}
 
 
 
 
+.footer {
+  background: #444;
+  padding: 20px;
+  color: #FFF;
 
-
-
+  a {
+    color: orange;
+  }
+}
 
 
 

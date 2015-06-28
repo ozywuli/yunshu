@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <title>Document</title>
 
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300italic,300,400italic,600italic,600,700italic,700,800,800italic' rel='stylesheet' type='text/css'>
+
   <!-- styles -->
   <link rel="stylesheet" href="bower_components/normalize.css/normalize.css">
   <link rel="stylesheet" href="src/css/main.css">
@@ -22,14 +24,14 @@
 
 <!-- #header -->
 <header class="navbar">
-  <h1 class="title"><a href="http://yunshu.ozywuli.com">Yunshu</a></h1>
+  <h1 class="title"><a href="http://yunshu.ozywuli.com">YUNSHU</a></h1>
 </header><!-- /header -->
 
 <!-- #searchbar -->
 <div class="searchbar">
   <form action="" class="form">
     <div class="form-group">
-      <input class="form-control" id="word" placeholder="Example" type="text">
+      <input class="form-control" id="word" placeholder="Type your word here" type="text">
     </div>
 
 
@@ -55,19 +57,24 @@
 <div class="word-results">
 
 <div class="definitions-container">
-  <h3 class="definitions-title">Definitions</h3>
+  <h3 class="definitions-title section-title">Definitions</h3>
   <ul class="definitions"></ul>
 </div>
 
 
 <div class="rhymes-container">
-  <h3 class="rhymes-title">Rhymes</h3>
+  <h3 class="rhymes-title section-title">Rhymes</h3>
   <ul class="rhymes"></ul>
 </div>
 
 </div><!-- /word results -->
 
 
+
+
+<div class="footer">
+  &copy; <a href="http://ozywuli.com">Ozy Wu-Li</a>
+</div>
 
 
 
@@ -94,7 +101,7 @@
   {{#rhymes}}
 
   {{#each all}}
-    <li class="rhyme">{{this}}</li>
+    <li class="rhyme">{{this}}, </li>
   {{/each}}
 
   {{/rhymes}}

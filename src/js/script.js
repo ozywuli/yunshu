@@ -39,6 +39,9 @@ if ( word ) {
             console.log(data);
             console.log(data.rhymes)
 
+
+            $('.rhymes').empty();
+
             var theTemplateScript = $("#rhymes-template").html();
             var theTemplate = Handlebars.compile(theTemplateScript);
             $(".rhymes").append(theTemplate(data));
