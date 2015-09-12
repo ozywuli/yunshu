@@ -9,6 +9,7 @@
    ========================================================================== */
 /* line 13, ../sass/main.scss */
 html, body {
+  height: 100%;
   color: #222;
   font-size: 62.5%;
   line-height: 1.4;
@@ -21,13 +22,13 @@ html, body {
  * These selection rule sets have to be separate.
  * Customize the background color to match your design.
  */
-/* line 27, ../sass/main.scss */
+/* line 28, ../sass/main.scss */
 ::-moz-selection {
   background: #b3d4fc;
   text-shadow: none;
 }
 
-/* line 32, ../sass/main.scss */
+/* line 33, ../sass/main.scss */
 ::selection {
   background: #b3d4fc;
   text-shadow: none;
@@ -36,7 +37,7 @@ html, body {
 /*
  * A better looking default horizontal rule
  */
-/* line 41, ../sass/main.scss */
+/* line 42, ../sass/main.scss */
 hr {
   display: block;
   height: 1px;
@@ -51,7 +52,7 @@ hr {
  * images, videos and the bottom of their containers:
  * https://github.com/h5bp/html5-boilerplate/issues/440
  */
-/* line 56, ../sass/main.scss */
+/* line 57, ../sass/main.scss */
 audio,
 canvas,
 iframe,
@@ -64,7 +65,7 @@ video {
 /*
  * Remove default fieldset styles.
  */
-/* line 69, ../sass/main.scss */
+/* line 70, ../sass/main.scss */
 fieldset {
   border: 0;
   margin: 0;
@@ -74,27 +75,27 @@ fieldset {
 /*
  * Allow only vertical resizing of textareas.
  */
-/* line 79, ../sass/main.scss */
+/* line 80, ../sass/main.scss */
 textarea {
   resize: vertical;
 }
 
-/* line 85, ../sass/main.scss */
+/* line 86, ../sass/main.scss */
 * {
   box-sizing: border-box;
 }
 
-/* line 89, ../sass/main.scss */
+/* line 90, ../sass/main.scss */
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
 
-/* line 93, ../sass/main.scss */
+/* line 94, ../sass/main.scss */
 a {
   text-decoration: none;
 }
 
-/* line 97, ../sass/main.scss */
+/* line 98, ../sass/main.scss */
 ul, ol, li {
   list-style: none;
   margin: 0;
@@ -104,7 +105,7 @@ ul, ol, li {
 /* ==========================================================================
    Browser Upgrade Prompt
    ========================================================================== */
-/* line 109, ../sass/main.scss */
+/* line 110, ../sass/main.scss */
 .browserupgrade {
   margin: 0.2em 0;
   background: #ccc;
@@ -115,19 +116,31 @@ ul, ol, li {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-/* line 121, ../sass/main.scss */
+/* line 122, ../sass/main.scss */
 .container {
+  height: 100%;
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
   font-size: 1.4rem;
 }
 @media all and (min-width: 768px) {
-  /* line 121, ../sass/main.scss */
+  /* line 122, ../sass/main.scss */
   .container {
     font-size: 1.8rem;
   }
 }
 
-/* line 131, ../sass/main.scss */
+/* line 135, ../sass/main.scss */
+.wrapper {
+  min-height: 100%;
+  margin-bottom: -65px;
+}
+/* line 139, ../sass/main.scss */
+.wrapper:after {
+  content: '';
+  height: 65px;
+}
+
+/* line 146, ../sass/main.scss */
 .title {
   display: block;
   background: #333;
@@ -135,30 +148,30 @@ ul, ol, li {
   padding: 10px 20px;
   font-size: 1.2rem;
 }
-/* line 137, ../sass/main.scss */
+/* line 152, ../sass/main.scss */
 .title a {
   color: #FFF;
 }
 
-/* line 142, ../sass/main.scss */
+/* line 157, ../sass/main.scss */
 .searchbar {
   padding: 20px;
   background: #0088FF;
 }
 
-/* line 148, ../sass/main.scss */
+/* line 163, ../sass/main.scss */
 .form {
   position: relative;
 }
 
-/* line 155, ../sass/main.scss */
+/* line 170, ../sass/main.scss */
 .form-group input {
   width: 100%;
   border: 0;
   padding: 8px 10px;
 }
 
-/* line 162, ../sass/main.scss */
+/* line 177, ../sass/main.scss */
 .btn {
   position: absolute;
   top: 0;
@@ -167,70 +180,88 @@ ul, ol, li {
   border: 0;
   height: 100%;
 }
-/* line 170, ../sass/main.scss */
+/* line 185, ../sass/main.scss */
 .btn svg {
   width: 24px;
   height: 24px;
 }
 
-/* line 178, ../sass/main.scss */
+/* line 193, ../sass/main.scss */
 .has-error {
   border: 1px solid red;
 }
 
-/* line 185, ../sass/main.scss */
+/* line 197, ../sass/main.scss */
+.loading {
+  position: absolute;
+  display: none;
+}
+
+/* line 202, ../sass/main.scss */
+.no-results {
+  display: none;
+}
+
+/* line 208, ../sass/main.scss */
 .word-results {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
   padding: 20px;
 }
-/* line 188, ../sass/main.scss */
+/* line 215, ../sass/main.scss */
 .word-results > div {
   margin-bottom: 40px;
 }
 
-/* line 193, ../sass/main.scss */
+/* line 223, ../sass/main.scss */
 .section-title {
   margin-bottom: 10px;
 }
 
-/* line 198, ../sass/main.scss */
-.definitions {
+/* line 228, ../sass/main.scss */
+.definitions-container, .rhymes-container {
   display: none;
+}
+
+/* line 231, ../sass/main.scss */
+.definitions {
   counter-reset: top-counter;
 }
 
-/* line 203, ../sass/main.scss */
+/* line 235, ../sass/main.scss */
 .definition {
   margin-bottom: 10px;
 }
-/* line 206, ../sass/main.scss */
+/* line 238, ../sass/main.scss */
 .definition:before {
   content: counter(top-counter,decimal);
   counter-increment: top-counter;
   float: left;
 }
 
-/* line 214, ../sass/main.scss */
+/* line 246, ../sass/main.scss */
 .def-content {
   padding-left: 40px;
 }
 
-/* line 218, ../sass/main.scss */
+/* line 250, ../sass/main.scss */
 .rhymes {
   line-height: 2;
 }
 
-/* line 221, ../sass/main.scss */
+/* line 253, ../sass/main.scss */
 .rhyme {
   display: inline;
 }
 
-/* line 228, ../sass/main.scss */
+/* line 260, ../sass/main.scss */
 .footer {
-  background: #444;
+  background: #333;
   padding: 20px;
   color: #FFF;
 }
-/* line 233, ../sass/main.scss */
+/* line 265, ../sass/main.scss */
 .footer a {
   color: orange;
 }
@@ -241,7 +272,7 @@ ul, ol, li {
 /*
  * Hide visually and from screen readers:
  */
-/* line 251, ../sass/main.scss */
+/* line 283, ../sass/main.scss */
 .hidden {
   display: none !important;
 }
@@ -250,7 +281,7 @@ ul, ol, li {
  * Hide only visually, but have it available for screen readers:
  * http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
  */
-/* line 260, ../sass/main.scss */
+/* line 292, ../sass/main.scss */
 .visuallyhidden {
   border: 0;
   clip: rect(0 0 0 0);
@@ -267,7 +298,7 @@ ul, ol, li {
  * to be focusable when navigated to via the keyboard:
  * https://www.drupal.org/node/897638
  */
-/* line 277, ../sass/main.scss */
+/* line 309, ../sass/main.scss */
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
   clip: auto;
@@ -281,7 +312,7 @@ ul, ol, li {
 /*
  * Hide visually and from screen readers, but maintain layout
  */
-/* line 291, ../sass/main.scss */
+/* line 323, ../sass/main.scss */
 .invisible {
   visibility: hidden;
 }
@@ -297,7 +328,7 @@ ul, ol, li {
  * 2. The use of `table` rather than `block` is only necessary if using
  *    `:before` to contain the top-margins of child elements.
  */
-/* line 307, ../sass/main.scss */
+/* line 339, ../sass/main.scss */
 .clearfix:before,
 .clearfix:after {
   content: " ";
@@ -306,7 +337,7 @@ ul, ol, li {
   /* 2 */
 }
 
-/* line 313, ../sass/main.scss */
+/* line 345, ../sass/main.scss */
 .clearfix:after {
   clear: both;
 }
@@ -328,7 +359,7 @@ ul, ol, li {
    http://www.phpied.com/delay-loading-your-print-css/
    ========================================================================== */
 @media print {
-  /* line 341, ../sass/main.scss */
+  /* line 373, ../sass/main.scss */
   *,
   *:before,
   *:after {
@@ -340,18 +371,18 @@ ul, ol, li {
     text-shadow: none !important;
   }
 
-  /* line 351, ../sass/main.scss */
+  /* line 383, ../sass/main.scss */
   a,
   a:visited {
     text-decoration: underline;
   }
 
-  /* line 356, ../sass/main.scss */
+  /* line 388, ../sass/main.scss */
   a[href]:after {
     content: " (" attr(href) ")";
   }
 
-  /* line 360, ../sass/main.scss */
+  /* line 392, ../sass/main.scss */
   abbr[title]:after {
     content: " (" attr(title) ")";
   }
@@ -360,13 +391,13 @@ ul, ol, li {
    * Don't show links that are fragment identifiers,
    * or use the `javascript:` pseudo protocol
    */
-  /* line 369, ../sass/main.scss */
+  /* line 401, ../sass/main.scss */
   a[href^="#"]:after,
   a[href^="javascript:"]:after {
     content: "";
   }
 
-  /* line 374, ../sass/main.scss */
+  /* line 406, ../sass/main.scss */
   pre,
   blockquote {
     border: 1px solid #999;
@@ -377,23 +408,23 @@ ul, ol, li {
    * Printing Tables:
    * http://css-discuss.incutio.com/wiki/Printing_Tables
    */
-  /* line 385, ../sass/main.scss */
+  /* line 417, ../sass/main.scss */
   thead {
     display: table-header-group;
   }
 
-  /* line 389, ../sass/main.scss */
+  /* line 421, ../sass/main.scss */
   tr,
   img {
     page-break-inside: avoid;
   }
 
-  /* line 394, ../sass/main.scss */
+  /* line 426, ../sass/main.scss */
   img {
     max-width: 100% !important;
   }
 
-  /* line 398, ../sass/main.scss */
+  /* line 430, ../sass/main.scss */
   p,
   h2,
   h3 {
@@ -401,7 +432,7 @@ ul, ol, li {
     widows: 3;
   }
 
-  /* line 405, ../sass/main.scss */
+  /* line 437, ../sass/main.scss */
   h2,
   h3 {
     page-break-after: avoid;

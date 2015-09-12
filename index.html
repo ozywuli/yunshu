@@ -22,6 +22,9 @@
 <div class="container">
 
 
+<!-- #wrapper -->
+<div class="wrapper">
+
 <!-- #header -->
 <header class="navbar">
   <h1 class="title"><a href="http://yunshu.ozywuli.com">YUNSHU</a></h1>
@@ -53,29 +56,40 @@
 </div><!-- #searchbar -->
 
 
+
+
 <!-- #word results -->
 <div class="word-results">
 
-<div class="definitions-container">
-  <h3 class="definitions-title section-title">Definitions</h3>
-  <ul class="definitions"></ul>
-</div>
+  <div class="loading"><img src="src/img/preloader.gif" alt=""></div>
+
+  <div class="no-results"></div>
 
 
-<div class="rhymes-container">
-  <h3 class="rhymes-title section-title">Rhymes</h3>
-  <ul class="rhymes"></ul>
-</div>
+
+    <div class="definitions-container">
+
+    </div>
+
+
+    <div class="rhymes-container">
+
+
+    </div>
+
+
+
+
 
 </div><!-- /word results -->
 
 
 
+</div><!-- /wrapper -->
 
 <div class="footer">
   &copy; <a href="http://ozywuli.com">Ozy Wu-Li</a>
 </div>
-
 
 
 </div><!-- /container -->
@@ -92,12 +106,18 @@
 <script src="bower_components/underscore/underscore-min.js"></script>
 
 <script id="definition-template" type="x-handlebars-template">
+  <h3 class="definitions-title section-title">Definitions</h3>
+  <ul class="definitions">
   {{#results}}
     <li class="definition"><div class="def-content">{{definition}}</div></li>
   {{/results}}
+  </ul>
 </script>
 
 <script id="rhymes-template" type="x-handlebars-template">
+  <h3 class="rhymes-title section-title">Rhymes</h3>
+
+  <ul class="rhymes">
   {{#rhymes}}
 
   {{#each all}}
@@ -105,6 +125,7 @@
   {{/each}}
 
   {{/rhymes}}
+  </ul>
 </script>
 
 <script src="src/js/script.js"></script>

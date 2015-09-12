@@ -11,6 +11,7 @@
    ========================================================================== */
 
 html, body {
+    height: 100%;
     color: #222;
     font-size: 62.5%;
     line-height: 1.4;
@@ -119,14 +120,28 @@ ul, ol, li {
 
 
 .container {
+  height: 100%;
+
   font-family: 'Open Sans', Helvetica, Arial, sans-serif;
   font-size: 1.4rem;
+
 
   @media all and (min-width: 768px) {
     font-size: 1.8rem;
   }
 }
 
+
+.wrapper {
+  min-height: 100%;
+  margin-bottom: -65px;
+
+  &:after {
+    content: '';
+    height: 65px;
+  }
+
+}
 
 .title {
   display: block;
@@ -179,15 +194,30 @@ ul, ol, li {
   border: 1px solid red;
 }
 
+.loading {
+  position: absolute;
+  display: none;
+}
+
+.no-results {
+  display: none;
+}
 
 
 
 .word-results {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+
   padding: 20px;
 
   & > div {
     margin-bottom: 40px;
   }
+
+
+
 }
 
 .section-title {
@@ -195,8 +225,10 @@ ul, ol, li {
 }
 
 
-.definitions {
+.definitions-container, .rhymes-container {
   display: none;
+}
+.definitions {
   counter-reset: top-counter;
 }
 
@@ -226,7 +258,7 @@ ul, ol, li {
 
 
 .footer {
-  background: #444;
+  background: #333;
   padding: 20px;
   color: #FFF;
 

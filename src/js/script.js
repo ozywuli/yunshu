@@ -9,6 +9,8 @@ var word = $('#word').val();
 
 if ( word ) {
 
+  $('.loading').show();
+
   $.ajax({
       url: 'https://wordsapiv1.p.mashape.com/words/' + word, // The URL to the API. You can get this in the API page of the API you intend to consume
       type: 'GET', // The HTTP Method, can be GET POST PUT DELETE etc
@@ -16,48 +18,73 @@ if ( word ) {
       datatype: 'json',
       success: function(data) {
 
-
         console.log(data);
 
+        if (!data.results) {
 
-
-        $('.definitions').empty();
-
-
-        $('.definitions').fadeIn(800);
-
-
-        var theTemplateScript = $("#definition-template").html();
-        var theTemplate = Handlebars.compile(theTemplateScript);
-        $(".definitions").append(theTemplate(data));
+          $('.loading').fadeOut(400);
 
 
 
-        $.ajax({
-          url: 'https://wordsapiv1.p.mashape.com/words/' + word + '/rhymes',
-          type: 'GET',
-          data: {},
-          datatype: 'json',
-          success: function(data) {
-            console.log(data);
-            console.log(data.rhymes)
+          $('.no-results').fadeIn(400).html('<p>Uh oh, no results. Make sure you\'ve spelled the word correctly or please try again with another word. Thanks!</p>');
+
+                    $('.definitions-container').empty();
+                    $('.rhymes-container').empty();
+
+        } else {
 
 
-            $('.rhymes').empty();
+          if ($('.no-results').length) {
+            $('.no-results').fadeOut(400);
+          }
 
-            var theTemplateScript = $("#rhymes-template").html();
-            var theTemplate = Handlebars.compile(theTemplateScript);
-            $(".rhymes").append(theTemplate(data));
+          $('.loading').fadeOut(400);
 
 
-          }, // end success
-          error: function(err) {
-            console.log(err);
-          }, // end error
-          beforeSend: function(xhr) {
-            xhr.setRequestHeader("X-Mashape-Authorization", "hhUvOn80C0mshEr1StkZqqGUloimp1P7Ndwjsn4g645NtwbRDP");
-          } // end beforeSend
-        });
+
+          $('.definitions-container').empty();
+
+
+          $('.definitions-container').fadeIn(800);
+
+
+          var theTemplateScript = $("#definition-template").html();
+          var theTemplate = Handlebars.compile(theTemplateScript);
+          $(".definitions-container").append(theTemplate(data));
+
+
+
+          $.ajax({
+            url: 'https://wordsapiv1.p.mashape.com/words/' + word + '/rhymes',
+            type: 'GET',
+            data: {},
+            datatype: 'json',
+            success: function(data) {
+              console.log(data);
+
+
+
+              $('.rhymes-container').empty();
+
+              $('.rhymes-container').fadeIn(800);
+
+              var theTemplateScript = $("#rhymes-template").html();
+              var theTemplate = Handlebars.compile(theTemplateScript);
+              $(".rhymes-container").append(theTemplate(data));
+
+
+            }, // end success
+            error: function(err) {
+              console.log(err);
+            }, // end error
+            beforeSend: function(xhr) {
+              xhr.setRequestHeader("X-Mashape-Authorization", "hhUvOn80C0mshEr1StkZqqGUloimp1P7Ndwjsn4g645NtwbRDP");
+            } // end beforeSend
+          });
+
+
+        }
+
 
 
       }, // end success
